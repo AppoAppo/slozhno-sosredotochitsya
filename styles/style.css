@@ -323,6 +323,7 @@ article .content__section-article-title {
     padding-inline: 0;
     gap: 10px;
   }
+  
   .header__theme-menu {
     grid-column-start: 3;
     align-self: center;
@@ -332,6 +333,7 @@ article .content__section-article-title {
   .header__theme-menu-item {
     line-height: 20px;
   }
+
   .header__text {
     align-self: center;
     grid-row: 3;
@@ -339,15 +341,19 @@ article .content__section-article-title {
     inline-size: 50%;
     justify-self: end;
   }
+
   .header__title {
     line-height: 6.2rem;
   }
+
   .content__section_three_cols-title {
     inline-size: 32%;
   }
+
   .content__section_three_cols-article {
     grid-column: 1/4;
   }
+
   .content__section-article-list {
     padding-inline-start: 7px;
   }
@@ -360,16 +366,19 @@ article .content__section-article-title {
     padding: 10px;
     margin-bottom: 40px;
   }
+
   .header__theme-menu-list {
     flex-direction: column;
     padding-inline: 0;
     gap: 10px;
   }
+
   .header__theme-menu {
     grid-column-start: 3;
     align-self: center;
     justify-self: end;
   }
+
   .header__theme-menu-item {
     line-height: 20px;
   }
@@ -405,6 +414,7 @@ article .content__section-article-title {
     padding-inline: 10px;
     gap: 50px;
   }
+
   .content__section {
     grid-template-columns: 1fr;
   }
@@ -412,9 +422,11 @@ article .content__section-article-title {
     grid-column: 1;
     inline-size: 100%;
   }
+  
   .content__section_three_cols-list {
     grid-template-columns: 1fr;
   }
+
   .content__section-article,
   .content__section-article-list {
     grid-column: 1;
@@ -424,15 +436,19 @@ article .content__section-article-title {
   .content__section-image_gallery {
     gap: 10px;
   }
+  
   .image_gallery-birds_sunset {
     grid-row: 1;
   }
+
   .image_gallery-chibi_icecream {
     grid-row: 2;
   }
+
   .image_gallery-tape {
     grid-row: 3;
   }
+
   .image_gallery-birds_sunset,
   .image_gallery-chibi_icecream,
   .image_gallery-tape,
