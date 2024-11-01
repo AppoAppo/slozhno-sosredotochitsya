@@ -2,3 +2,25 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+:root {
+  /* Фон для страницы */
+  --background-image-url: url(../images/cover-image-dark.png);
+  /* Цвет для выделения */
+  --accent-color: #ff0070;
+  /* Цвет для заголовков секций */
+  --section-title-color: #ff0070;
+  /* Управление элементом REC */
+  --header-decore_item: block;
+  /* Фоновый цвет страницы, если не загрузится картинка */
+  --background-color: #000028;
+  /* Цвет для текста на выделенном фоне */
+  --decor-text-color: #000028;
+  /* Основной шрифт страницы */
+  --page-font: IBM Plex Mono;
+  /* Цвет текста статей */
+  --article-text-color: #f1b2ce;
+  /* Цвет текста заголовка */
+  --header-title-color: #db00ff;
+  /* Основной размер текста на странице */
+  --article-font-size: 18px;
+}

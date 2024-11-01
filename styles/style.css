@@ -2,4 +2,453 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  background-image: var(--background-image-url);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: var(--background-color);
+  font-family: var(--page-font);
+  font-size: var(--article-font-size);
+}
+
+/* Стили для Header */
+
+.header {
+  position: relative;
+  block-size: 100vh;
+  display: grid;
+  grid-template: 1fr min-content 1fr / repeat(3, 1fr);
+  column-gap: 20px;
+  padding: 20px;
+  margin-block-end: 3.333em;
+}
+
+.header__title {
+  grid-row-start: 2;
+  grid-column: 1/4;
+  margin-inline-start: -1.111rem;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--header-title-color);
+  font-weight: 700;
+  line-height: 8.188rem;
+  text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+.header__text {
+  display: block;
+  align-self: center;
+  grid-row: 3;
+  grid-column: 2/4;
+  margin-inline-start: 8.778em;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+/* Стили для меню в Header */
+
+.header__theme-menu {
+  grid-column-start: 2;
+  align-self: start;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  padding-inline: 2.333rem;
+  justify-content: space-between;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+}
+
+.header__theme-menu-item {
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  color: var(--accent-color);
+}
+
+.header__theme-menu-item:has(.header__theme-menu-button_active) {
+  outline: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  border: none;
+  text-transform: lowercase;
+  text-align: center;
+  padding-block: 0.167em;
+  padding-inline: 0.722em;
+}
+
+.header__theme-menu-item:hover {
+  outline: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  outline: none;
+  text-decoration: underline;
+  text-underline-offset: 0.333em;
+}
+
+/* Стили для надписи REC и огонька */
+
+.header__decor {
+  display: var(--header-decore_item);
+  position: absolute;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 25px;
+  text-align: center;
+  top: 21px;
+  right: 49px;
+  color: var(--accent-color);
+}
+
+.header__decor::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  inline-size: 9px;
+  block-size: 9px;
+  top: 7px;
+  left: 43px;
+  box-shadow: 0px 0px 4px 2px var(--shadow-color);
+}
+
+/* Уголки для Header и Footer */
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-inline-end: 1px solid var(--decor-color);
+  border-block-start: 1px solid var(--decor-color);
+  width: 25px;
+  height: 25px;
+  top: 20px;
+  right: 20px;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  display: block;
+  border-inline-start: 1px solid var(--decor-color);
+  border-block-end: 1px solid var(--decor-color);
+  width: 25px;
+  height: 25px;
+  bottom: 20px;
+  left: 20px;
+}
+
+/* Выделение отдельных заголовков */
+
+.title-decor {
+  color: var(--decor-text-color);
+  background-color: var(--accent-color);
+}
+
+/* Стили для основного контента страницы */
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-inline: 20px;
+}
+
+.content__section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+
+.content__section-title {
+  grid-column: 1;
+  inline-size: 100%;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--section-title-color);
+}
+
+.content__section_three_cols-title {
+  grid-column: 1/4;
+  inline-size: 33%;
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: var(--section-title-color);
+}
+.content__section-article {
+  grid-column: 2/4;
+  inline-size: 100%;
+}
+
+.content__section-article-list {
+  grid-column: 2/4;
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content__section_three_cols-list {
+  grid-column: 1/4;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.content__section-article-title {
+  font-size: inherit;
+  font-weight: 700;
+  line-height: 23.4px;
+  text-align: left;
+}
+
+/* Стиль для подзаголовка группы статей  */
+
+article .content__section-article-title {
+  margin-block-end: 10px;
+}
+
+/* Стиль для отмены выделения заголовка жирным */
+
+.title-notbold {
+  font-weight: 400;
+}
+
+.content__section-article-text {
+  font-weight: 400;
+  line-height: 23.4px;
+  text-align: left;
+  color: var(--article-text-color);
+}
+
+.content__section-article-link {
+  text-decoration: none;
+  text-shadow: 1px 2px 0 var(--shadow-color);
+}
+
+.content__section-article-link:hover {
+  border-block-end: 1px solid var(--article-text-color);
+}
+
+.content__section-article-link:focus {
+  outline: none;
+}
+
+.content__section-article-link:focus-visible {
+  outline: 1px solid var(--article-text-color);
+  line-height: 15px;
+  display: inline-block;
+}
+
+/* Стили для галереи с картинками */
+
+.image_gallery_grid {
+  grid-template-columns: 1fr;
+}
+.content__section-image_gallery {
+  display: grid;
+  gap: 20px;
+}
+
+.image_gallery-item {
+  inline-size: 100%;
+  object-fit: cover;
+}
+
+.image_gallery-birds_sunset {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row: 1;
+}
+
+.image_gallery-chibi_icecream {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  height: 100%;
+}
+
+.image_gallery-tape {
+  grid-row-start: 2;
+  grid-row-end: 4;
+  height: 100%;
+}
+
+.image_gallery-japan_street {
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+
+/* Стили для Footer */
+
+.footer {
+  position: relative;
+  height: 100vh;
+  display: grid;
+  padding: 20px;
+  margin-top: 60px;
+}
+
+.footer__title {
+  align-self: center;
+  justify-self: center;
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  color: var(--header-title-color);
+  font-weight: 700;
+  line-height: 8.188rem;
+  text-shadow: 4px 4px 0 var(--shadow-color);
+}
+
+/* Медиа для размеров между планшетом и мобильным устройством */
+
+@media (375px < width <= 768px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    padding-inline: 0;
+    gap: 10px;
+  }
+  .header__theme-menu {
+    grid-column-start: 3;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .header__theme-menu-item {
+    line-height: 20px;
+  }
+  .header__text {
+    align-self: center;
+    grid-row: 3;
+    grid-column: 1 / 4;
+    inline-size: 50%;
+    justify-self: end;
+  }
+  .header__title {
+    line-height: 6.2rem;
+  }
+  .content__section_three_cols-title {
+    inline-size: 32%;
+  }
+  .content__section_three_cols-article {
+    grid-column: 1/4;
+  }
+  .content__section-article-list {
+    padding-inline-start: 7px;
+  }
+}
+
+/* Медиа для мобильных устройств */
+
+@media (width <= 375px) {
+  .header {
+    padding: 10px;
+    margin-bottom: 40px;
+  }
+  .header__theme-menu-list {
+    flex-direction: column;
+    padding-inline: 0;
+    gap: 10px;
+  }
+  .header__theme-menu {
+    grid-column-start: 3;
+    align-self: center;
+    justify-self: end;
+  }
+  .header__theme-menu-item {
+    line-height: 20px;
+  }
+
+  .header__text {
+    align-self: center;
+    grid-row: 3;
+    grid-column: 1 / 4;
+    margin-inline-start: 0;
+  }
+  .header__title {
+    line-height: 6rem;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-inline-start: 0;
+  }
+
+  .decorated-zone::after {
+    top: 10px;
+    right: 10px;
+  }
+
+  .decorated-zone::before {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .header__decor {
+    top: 11px;
+    right: 39px;
+  }
+
+  .content {
+    padding-inline: 10px;
+    gap: 50px;
+  }
+  .content__section {
+    grid-template-columns: 1fr;
+  }
+  .content__section_three_cols-title {
+    grid-column: 1;
+    inline-size: 100%;
+  }
+  .content__section_three_cols-list {
+    grid-template-columns: 1fr;
+  }
+  .content__section-article,
+  .content__section-article-list {
+    grid-column: 1;
+  }
+
+  .image_gallery_grid,
+  .content__section-image_gallery {
+    gap: 10px;
+  }
+  .image_gallery-birds_sunset {
+    grid-row: 1;
+  }
+  .image_gallery-chibi_icecream {
+    grid-row: 2;
+  }
+  .image_gallery-tape {
+    grid-row: 3;
+  }
+  .image_gallery-birds_sunset,
+  .image_gallery-chibi_icecream,
+  .image_gallery-tape,
+  .image_gallery-japan_street,
+  .image_gallery-coffee_book {
+    grid-column: 1;
+  }
+
+  .footer {
+    padding: 10px;
+    margin-block-start: 40px;
+  }
+
+  .footer__title {
+    line-height: 6rem;
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-inline-start: 0;
+  }
 }
