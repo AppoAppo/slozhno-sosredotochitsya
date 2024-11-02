@@ -11,6 +11,7 @@
   */
   --background-image-url: url(../images/cover-image-dark.png);
   --accent-color: #ff0070;
+  --accent-color-hover: rgb(255, 0, 112, 0.4);
   --decor-color: var(--accent-color);
   --section-title-color: var(--accent-color);
   --shadow-color: var(--accent-color);
@@ -27,6 +28,7 @@
   :root {
     --background-image-url: url(../images/cover-image-dark.png);
     --accent-color: #ff0070;
+    --accent-color-hover: rgb(255, 0, 112, 0.4);
     --decor-color: var(--accent-color);
     --section-title-color: var(--accent-color);
     --shadow-color: var(--accent-color);

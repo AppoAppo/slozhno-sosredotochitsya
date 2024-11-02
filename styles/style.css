@@ -16,7 +16,7 @@
 
 .header {
   position: relative;
-  block-size: 100vh;
+  block-size: max(668px, 100vh);
   display: grid;
   grid-template: 1fr min-content 1fr / repeat(3, 1fr);
   column-gap: 20px;
@@ -55,7 +55,7 @@
 
 .header__theme-menu-list {
   display: flex;
-  padding-inline: 2.333rem;
+  padding-inline: 2.633rem;
   justify-content: space-between;
 }
 
@@ -84,15 +84,16 @@
 }
 
 .header__theme-menu-item:hover {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--accent-color-hover);
 }
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-button:focus-visible {
+.header__theme-menu-item:has(:focus-visible) {
   outline: none;
+  border-block-end: 1px solid var(--accent-color);
   text-decoration: underline;
   text-underline-offset: 0.333em;
 }
@@ -182,32 +183,39 @@
   color: var(--section-title-color);
 }
 
-.content__section_three_cols-title {
+.content__section-title_wide {
   grid-column: 1/4;
   inline-size: 33%;
-  font-size: inherit;
-  font-weight: 700;
-  line-height: 23.4px;
-  color: var(--section-title-color);
-}
-.content__section-article {
-  grid-column: 2/4;
-  inline-size: 100%;
 }
 
-.content__section-article-list {
+.content__section-article {
   grid-column: 2/4;
   inline-size: 100%;
   display: flex;
   flex-direction: column;
+  gap: 19px;
+}
+
+.content__section_multi_cols-article {
+  grid-column: 1/4;
+}
+
+.content__section-article-list {
+  display: grid;
   gap: 20px;
 }
 
-.content__section_three_cols-list {
-  grid-column: 1/4;
+.content__section_multi_cols-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+}
+
+.content__section-article-list_item {
+  inline-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .content__section-article-title {
@@ -215,12 +223,6 @@
   font-weight: 700;
   line-height: 23.4px;
   text-align: left;
-}
-
-/* Стиль для подзаголовка группы статей  */
-
-article .content__section-article-title {
-  margin-block-end: 10px;
 }
 
 /* Стиль для отмены выделения заголовка жирным */
@@ -257,12 +259,13 @@ article .content__section-article-title {
 
 /* Стили для галереи с картинками */
 
-.image_gallery_grid {
-  grid-template-columns: 1fr;
-}
 .content__section-image_gallery {
   display: grid;
   gap: 20px;
+}
+
+.image_gallery_grid {
+  grid-template-columns: 1fr;
 }
 
 .image_gallery-item {
@@ -299,7 +302,7 @@ article .content__section-article-title {
 
 .footer {
   position: relative;
-  height: 100vh;
+  block-size: max(668px, 100vh);
   display: grid;
   padding: 20px;
   margin-top: 60px;
@@ -317,13 +320,13 @@ article .content__section-article-title {
 
 /* Медиа для размеров между планшетом и мобильным устройством */
 
-@media (375px < width <= 768px) {
+@media (width <= 1023px) {
   .header__theme-menu-list {
     flex-direction: column;
     padding-inline: 0;
     gap: 10px;
   }
-  
+
   .header__theme-menu {
     grid-column-start: 3;
     align-self: center;
@@ -346,49 +349,32 @@ article .content__section-article-title {
     line-height: 6.2rem;
   }
 
-  .content__section_three_cols-title {
+  .content__section-title_wide {
     inline-size: 32%;
   }
 
-  .content__section_three_cols-article {
+  .content__section_multi_cols-listitem {
     grid-column: 1/4;
   }
 
-  .content__section-article-list {
+  .content__section-article_padded {
     padding-inline-start: 7px;
   }
 }
 
 /* Медиа для мобильных устройств */
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .header {
     padding: 10px;
     margin-bottom: 40px;
   }
 
-  .header__theme-menu-list {
-    flex-direction: column;
-    padding-inline: 0;
-    gap: 10px;
-  }
-
-  .header__theme-menu {
-    grid-column-start: 3;
-    align-self: center;
-    justify-self: end;
-  }
-
-  .header__theme-menu-item {
-    line-height: 20px;
-  }
-
   .header__text {
-    align-self: center;
-    grid-row: 3;
-    grid-column: 1 / 4;
+    inline-size: 100%;
     margin-inline-start: 0;
   }
+
   .header__title {
     line-height: 6rem;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
@@ -418,15 +404,18 @@ article .content__section-article-title {
   .content__section {
     grid-template-columns: 1fr;
   }
-  .content__section_three_cols-title {
+  .content__section-title_wide {
     grid-column: 1;
     inline-size: 100%;
   }
-  
-  .content__section_three_cols-list {
+
+  .content__section_multi_cols-list {
     grid-template-columns: 1fr;
   }
 
+  .content__section-article_padded {
+    padding-inline-start: 0;
+  }
   .content__section-article,
   .content__section-article-list {
     grid-column: 1;
@@ -436,7 +425,7 @@ article .content__section-article-title {
   .content__section-image_gallery {
     gap: 10px;
   }
-  
+
   .image_gallery-birds_sunset {
     grid-row: 1;
   }
