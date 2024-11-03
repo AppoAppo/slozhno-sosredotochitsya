@@ -32,7 +32,7 @@
   color: var(--header-title-color);
   font-weight: 700;
   line-height: 8.188rem;
-  text-shadow: 4px 4px 0 var(--shadow-color);
+  text-shadow: 4px 4px 0 var(--title-shadow-color);
 }
 
 .header__text {
@@ -67,11 +67,11 @@
   font-weight: 400;
   line-height: 18px;
   text-align: center;
-  color: var(--accent-color);
+  color: var(--menu-color);
 }
 
 .header__theme-menu-item:has(.header__theme-menu-button_active) {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--menu-color);
 }
 
 .header__theme-menu-button {
@@ -93,7 +93,7 @@
 
 .header__theme-menu-item:has(:focus-visible) {
   outline: none;
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-color);
   text-decoration: underline;
   text-underline-offset: 0.333em;
 }
@@ -240,7 +240,7 @@
 
 .content__section-article-link {
   text-decoration: none;
-  text-shadow: 1px 2px 0 var(--shadow-color);
+  text-shadow: 2px 2px 0 var(--shadow-color);
 }
 
 .content__section-article-link:hover {
@@ -315,7 +315,7 @@
   color: var(--header-title-color);
   font-weight: 700;
   line-height: 8.188rem;
-  text-shadow: 4px 4px 0 var(--shadow-color);
+  text-shadow: 2px 2px 0 var(--title-shadow-color);
 }
 
 /* Медиа для размеров между планшетом и мобильным устройством */

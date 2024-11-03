@@ -20,8 +20,8 @@
   --decor-text-color: #000028;
   --article-text-color: #f1b2ce;
   --header-title-color: #db00ff;
-  --page-font: IBM Plex Mono;
-  --article-font-size: 18px;
+  --title-shadow-color: var(--accent-color);
+  --menu-color: var(--accent-color);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -37,7 +37,7 @@
     --decor-text-color: #000028;
     --article-text-color: #f1b2ce;
     --header-title-color: #db00ff;
-    --page-font: IBM Plex Mono;
-    --article-font-size: 18px;
+    --title-shadow-color: var(--accent-color);
+    --menu-color: var(--accent-color);
   }
 }

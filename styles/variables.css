@@ -16,7 +16,7 @@
   /* Цвет для текста на выделенном фоне */
   --decor-text-color: #000028;
   /* Основной шрифт страницы */
-  --page-font: IBM Plex Mono;
+  --page-font: "IBM Plex Mono", monospace;
   /* Цвет текста статей */
   --article-text-color: #f1b2ce;
   /* Цвет текста заголовка */
@@ -25,4 +25,8 @@
   --article-font-size: 18px;
   /* Полупрозрачный цвет для рамки при выделении */
   --accent-color-hover: rgb(255, 0, 112, 0.4);
+  /* Цвет тени заголовка */
+  --title-shadow-color: var(--accent-color);
+  /* Цвет меню  */
+  --menu-color: var(--accent-color);
 }
