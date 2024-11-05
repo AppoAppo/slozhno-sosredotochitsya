@@ -27,7 +27,7 @@
 .header__title {
   grid-row-start: 2;
   grid-column: 1/4;
-  margin-inline-start: -1.111rem;
+  margin-inline-start: -20px;
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   color: var(--header-title-color);
   font-weight: 700;
@@ -65,7 +65,6 @@
 
 .header__theme-menu-item {
   font-weight: 400;
-  line-height: 18px;
   text-align: center;
   color: var(--menu-color);
 }
@@ -81,21 +80,21 @@
   text-align: center;
   padding-block: 0.167em;
   padding-inline: 0.722em;
+  line-height: 18px;
 }
 
-.header__theme-menu-item:hover {
+.header__theme-menu-button:hover {
   outline: 1px solid var(--accent-color-hover);
 }
+
 
 .header__theme-menu-button:focus {
   outline: none;
 }
 
-.header__theme-menu-item:has(:focus-visible) {
+.header__theme-menu-button:focus-visible {
   outline: none;
   border-block-end: 1px solid var(--menu-color);
-  text-decoration: underline;
-  text-underline-offset: 0.333em;
 }
 
 /* Стили для надписи REC и огонька */
@@ -333,7 +332,7 @@
     justify-self: end;
   }
 
-  .header__theme-menu-item {
+  .header__theme-menu-button {
     line-height: 20px;
   }
 
